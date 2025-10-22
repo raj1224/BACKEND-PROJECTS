@@ -56,7 +56,7 @@ export async function pollBatchResults(tokens) {
         },
       }
     );
-
+    // return data;
     const results = data.submissions;
     // FIX: Changed r.status !== 2 to r.status.id !== 2
     const isAllDone = results.every((r) => r.status.id !== 1 && r.status.id !== 2);
