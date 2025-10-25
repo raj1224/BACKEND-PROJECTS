@@ -68,5 +68,5 @@ export async function pollBatchResults(tokens) {
 }
 
 
-// every--> all values true ---> true &&
-// some --> koi bhi true --> true ||
+// // every--> all values true ---> true &&
+// // some --> koi bhi true --> true ||

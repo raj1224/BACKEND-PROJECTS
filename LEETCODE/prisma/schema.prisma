@@ -13,6 +13,11 @@ enum UserRole {
     ADMIN
     USER
 }
+enum Difficulty {
+  EASY
+  MEDIUM
+  HARD
+}
 
 
 model User {
@@ -29,11 +34,7 @@ model User {
   updatedAt DateTime @updatedAt
 }
 
-enum Difficulty {
-  EASY
-  MEDIUM
-  HARD
-}
+
 
 model Problem {
   id          String     @id @default(cuid())
