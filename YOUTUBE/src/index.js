@@ -16,7 +16,7 @@ app.get('/',(req,res)=>{
     })
 })
 
-app.use('/v1/api/users/',userRoutes);
+app.use('/api/v1/users/',userRoutes);
 
 connectDB()
 .then(app.listen(PORT,()=>{
