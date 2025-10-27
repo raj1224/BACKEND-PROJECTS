@@ -15,4 +15,5 @@ const userSchema = new mongoose.Schema({
   subscribedChannels: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
 },{timestamps:true});
 
-export const userModel = mongoose.model('User',userSchema)
+const userModel = mongoose.model('User',userSchema)
+export default userModel ; 
