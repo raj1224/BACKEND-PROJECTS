@@ -1,6 +1,7 @@
 import express from 'express';
 import {register,login,checkAuth,logout} from '../controllers/auth.controller.js';
 import { authenticate } from '../middlewares/auth.middleware.js';
+import { getAllSubmissions} from '../controllers/submission.controller.js';
 
 const router= express.Router();
 
@@ -13,4 +14,5 @@ router.post('/login',login);
 router.post('/logout',logout);
 // 4. check
 router.get('/check',authenticate,checkAuth);
+router.get('get-submissions',authenticate,getAllSubmissions)
 export default router;
