@@ -2,6 +2,7 @@ import express from 'express';
 import dotenv from 'dotenv';
 
 import { connectDB } from './config/db.config.js';
+import userRoutes from './routes/user.routes.js'
 
 dotenv.config();
 
@@ -14,6 +15,8 @@ app.get('/',(req,res)=>{
         log:'this is just testing route'
     })
 })
+
+app.use('/v1/api/users/',userRoutes);
 
 connectDB()
 .then(app.listen(PORT,()=>{
