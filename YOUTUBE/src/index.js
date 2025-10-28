@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 import fileUpload from 'express-fileupload';
 import bodyParser from 'body-parser';
 
+import videoRoutes from './routes/video.routes.js';
 import { connectDB } from './config/db.config.js';
 import userRoutes from './routes/user.routes.js'
 
@@ -24,6 +25,7 @@ app.get('/',(req,res)=>{
 })
 
 app.use('/api/v1/users/',userRoutes);
+app.use('/api/v1/videos/',videoRoutes);
 
 connectDB()
 .then(app.listen(PORT,()=>{
