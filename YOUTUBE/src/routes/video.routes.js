@@ -7,7 +7,7 @@ import { checkAuth } from "../middlewares/auth.middleware.js";
 const router = express.Router();
 
 router.post('/upload_video',checkAuth,uploadVideo);
-router.post('/update_video',updateVideo);
+router.post('/update_video/:id',updateVideo);
 router.post('/delete_video',deletedVideo);
 router.post('/getAll_video',getAllVideo);
 router.post('/getOwn_video',getOwnVideo);
