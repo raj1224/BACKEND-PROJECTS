@@ -1,9 +1,11 @@
 import bcrypt from 'bcrypt';
+import mongoose from 'mongoose';
+
 import User from '../models/users.model.js';
 import cloudinary from '../config/cloudinary.js';
 
 export const signup=async(req,res)=>{
-    const {channelName,email,password,phone,logoUrl}=req.body;
+    const {channelName,email,password,phone}=req.body;
    
     try {
         const hashedPassword=await bcrypt.hash(password,10);
@@ -26,7 +28,12 @@ export const signup=async(req,res)=>{
             user
         });
     } catch (error) {
-        
+        console.error(error);
+    res.status(500).json({
+        success: false,
+        message: 'Server Error',
+      error:error,
+    });
     }
 
 }
