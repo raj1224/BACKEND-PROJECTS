@@ -1,7 +1,7 @@
 import express from "express";
 import mongoose from "mongoose";
-import Comment from "../models/comment.model.js";
-import { checkAuth } from "../middleware/auth.middleware.js"; // To authenticate users
+import Comment from "../models/comments.model.js";
+import { checkAuth } from "../middlewares/auth.middleware.js"; // To authenticate users
 
 const router = express.Router();
 
