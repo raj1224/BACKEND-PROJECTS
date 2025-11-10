@@ -1,4 +1,4 @@
-// import { redis } from "../lib/redis.js";
+import { redis } from "../lib/redis.js";
 import User from "../models/user.model.js";
 import jwt from "jsonwebtoken";
 
@@ -50,10 +50,14 @@ export const signup = async (req, res) => {
 		setCookies(res, accessToken, refreshToken);
 
 		res.status(201).json({
-			_id: user._id,
-			name: user.name,
-			email: user.email,
-			role: user.role,
+			message:"user registered successfully",
+            user:{
+                id:user.id,
+                email:user.email,
+                name:user.name,
+                role:user.role,
+
+            }
 		});
 	} catch (error) {
 		console.log("Error in signup controller", error.message);
