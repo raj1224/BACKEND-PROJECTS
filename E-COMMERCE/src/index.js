@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 
 import { connectDB } from './lib/db.js';
 import authRoutes from './routes/auth.routes.js';
+import { protectRoute } from './middlewares/auth.middleware.js';
 
 
 const app = express();
@@ -19,6 +20,7 @@ app.get('/',(req,res)=>{
 })
 
 app.use('/api/v1/auth',authRoutes);
+app.use('/api/v1/products',protectRoute)
 
 connectDB()
 .then(app.listen(PORT,()=>{
