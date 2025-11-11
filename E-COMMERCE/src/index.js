@@ -3,7 +3,8 @@ import dotenv from 'dotenv';
 
 import { connectDB } from './lib/db.js';
 import authRoutes from './routes/auth.routes.js';
-import { protectRoute } from './middlewares/auth.middleware.js';
+import productRoutes from './routes/product.route.js';
+import cartRoutes from './routes/cart.route.js';
 
 
 const app = express();
@@ -20,7 +21,11 @@ app.get('/',(req,res)=>{
 })
 
 app.use('/api/v1/auth',authRoutes);
-app.use('/api/v1/products',protectRoute)
+app.use('/api/v1/products',productRoutes);
+app.use('/api/v1/cart',cartRoutes); 
+// app.use('/api/v1/coupons',); 
+// app.use('/api/v1/payments',); 
+// app.use('/api/v1/analytics',); 
 
 connectDB()
 .then(app.listen(PORT,()=>{
