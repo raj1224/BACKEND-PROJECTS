@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 
 import { connectDB } from './config/db.config.js';
 import userRoutes from './routes/user.routes.js';
+import captainRoutes from './routes/captain.routes.js';
 
 
 dotenv.config();
@@ -18,6 +19,7 @@ app.get('/', (req, res) => {
     res.send('Hello, World!');
 });
 
-app.use('/api/v1/auth', userRoutes)
+app.use('/api/v1/user', userRoutes)
+app.use('/api/v1/captain', captainRoutes)
 
 export default app;

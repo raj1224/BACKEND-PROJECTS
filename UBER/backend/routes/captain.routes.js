@@ -1,5 +1,5 @@
 import express from 'express';
-import { authCaptain } from '../middleware/auth.middleware.js';
+import { authCaptain } from '../middlewares/auth.middleware.js';
 import { registerValidator , loginValidator } from '../validators/captain.validator.js';
 import { getCaptainProfile, loginCaptain, logoutCaptain, registerCaptain } from '../controllers/captain.controller.js';
 
